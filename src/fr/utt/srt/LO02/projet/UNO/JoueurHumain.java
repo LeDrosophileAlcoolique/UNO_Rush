@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class JoueurHumain extends Joueur 
 {
 
-	public JoueurHumain(String nom) 
+	public JoueurHumain(String nom, Jeu partie) 
 	{
-		super(nom);
+		super(nom, partie);
 	}
 
 	public void selectionnerCarte()
@@ -32,7 +32,17 @@ public class JoueurHumain extends Joueur
 		
 		switch(reponse)
 		{
-			case(1) : 
+			case(1) :
+				System.out.println("- 1 ) Quelle carte souhaitez vous jouer ?\n");
+				afficherCartes();
+				Scanner sc2 = new Scanner(System.in);
+				//jouerCarte(int sc2);
+			case(2):
+				poigne.add((Card)(partie.getPioche().getToutesLesCartes().poll()));
+				
+			case(3):
+				aDitUNO = true;
+				
 		}
 		
 		

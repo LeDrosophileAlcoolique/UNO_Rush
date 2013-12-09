@@ -9,13 +9,17 @@ public abstract class Joueur
 	protected String nom;
 	protected int score;
 	protected String type;
+	protected Jeu partie;
+	protected boolean aDitUNO;
 	
 	
-	public Joueur(String nom)
+	public Joueur(String nom, Jeu partie)
 	{
 		poigne = new LinkedList();
 		score = 0;
 		this.nom = nom;
+		this.partie = partie;
+		aDitUNO = false;
 	}
 
 
@@ -43,19 +47,23 @@ public abstract class Joueur
 		return nom;
 	}
 	
-	public void affichageTexte()
+	public void afficherCartes()
 	{
 		ListIterator li = poigne.listIterator();
 		
-		
-		System.out.print("Joueur : " + nom +  "\n" );
 		while(li.hasNext())
 		{
 			((Card)(li.next())).affichageCarte();
 
 		}
 	}
-	public void Jouer()
+	
+	public void affichageTexte()
+	{
+		System.out.print("Joueur : " + nom +  "\n" );
+		afficherCartes();
+	}
+	public void jouer()
 	{
 		System.out.println("ca marche pas!");
 	}

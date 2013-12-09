@@ -8,6 +8,14 @@ import java.util.Collections;
 
 public class Pioche 
 {
+	public LinkedList getToutesLesCartes() {
+		return toutesLesCartes;
+	}
+
+	public void setToutesLesCartes(LinkedList toutesLesCartes) {
+		this.toutesLesCartes = toutesLesCartes;
+	}
+
 	private LinkedList toutesLesCartes;
 	
 	

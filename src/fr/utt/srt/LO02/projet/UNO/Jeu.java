@@ -15,40 +15,32 @@ public class Jeu
 	
 	private int nombreDeJoueur;
 	private int nombreHumain;
-//	private Scanner sc3;
-	private boolean sensNormal;
+	private int sensNormal;
 	
-	public Jeu(int joueur, int humain)
+	public Jeu(int joueur, int humain) 
 	{
 		this.nombreDeJoueur = joueur;
 		this.nombreHumain = humain;
-		this.sensNormal = true;
-		
-		listeJoueur = new  ArrayList<Joueur>();
-		//creer les joueurs		
-		creerListeJoueur(joueur, humain);
-		//creer la pioche
-		talon = new Talon();
-		//creer le talon
-		pioche = new Pioche();
-		//distribuer cartes 
-		distribuerCartes();
-		
-		//DEBUG TEST
-			ListIterator li = listeJoueur.listIterator();
-			
-			
-			
-			while(li.hasNext())
-			{
-				((Joueur)(li.next())).affichageTexte();
+		this.sensNormal = 1;
 
-			}
-			
-		
-		
-		
-		
+		listeJoueur = new ArrayList<Joueur>();
+		// creer les joueurs
+		creerListeJoueur(joueur, humain);
+		// creer la pioche
+		talon = new Talon();
+		// creer le talon
+		pioche = new Pioche();
+		// distribuer cartes
+		distribuerCartes();
+
+		// DEBUG TEST
+		ListIterator li = listeJoueur.listIterator();
+
+		while (li.hasNext()) 
+		{
+			((Joueur) (li.next())).affichageTexte();
+		}
+
 	}
 	
 	public static char scan(int index) { // récupère char dans un message a la position index depuis clavier 
@@ -85,10 +77,8 @@ public class Jeu
 		
 				nom = sc3.nextLine();
 				System.out.print(nom);
-
 			
-			
-			listeJoueur.add(new JoueurHumain(nom));
+			listeJoueur.add(new JoueurHumain(nom, this));
 			
 		}
 		
@@ -97,20 +87,89 @@ public class Jeu
 			System.out.print("Nom du Joueur IA n°" + (i+1));
 			nom = sc3.next();
 			
-			listeJoueur.add(new JoueurIA(nom));
-			enCoursSaisieIA = new JoueurIA(nom);
+			listeJoueur.add(new JoueurIA(nom, this));
+			//enCoursSaisieIA = new JoueurIA(nom);
 		}
 	}
 	
+	public ArrayList<Joueur> getListeJoueur() {
+		return listeJoueur;
+	}
+
+	public void setListeJoueur(ArrayList<Joueur> listeJoueur) {
+		this.listeJoueur = listeJoueur;
+	}
+
+	public Talon getTalon() {
+		return talon;
+	}
+
+	public void setTalon(Talon talon) {
+		this.talon = talon;
+	}
+
+	public Pioche getPioche() {
+		return pioche;
+	}
+
+	public void setPioche(Pioche pioche) {
+		this.pioche = pioche;
+	}
+
+	public int getNombreDeJoueur() {
+		return nombreDeJoueur;
+	}
+
+	public void setNombreDeJoueur(int nombreDeJoueur) {
+		this.nombreDeJoueur = nombreDeJoueur;
+	}
+
+	public int getNombreHumain() {
+		return nombreHumain;
+	}
+
+	public void setNombreHumain(int nombreHumain) {
+		this.nombreHumain = nombreHumain;
+	}
+
+	public int isSensNormal() {
+		return sensNormal;
+	}
+
+	public void setSensNormal(int sensNormal) {
+		this.sensNormal = sensNormal;
+	}
+
 	public void lancerManche()
 	{
 		boolean partieFinie = false;
+		int joueurEnCours = 0;
 		
-		ListIterator it = listeJoueur.listIterator();
+		//On initialise la Defausse
 		
 		while(!partieFinie)
 		{
+			//Le joueur en cours joue
+			listeJoueur.get(joueurEnCours).jouer();
 			
+			//On vérifie fin de partie (joueur en cours a plus de carte)
+			if(listeJoueur.get(joueurEnCours).getPoigne().isEmpty())
+			{
+				partieFinie = true;
+			}
+			
+			//On vérifie que la pioche a encore des carte.
+			
+			
+			//On applique l'effet de la carte posée.
+			
+			////talon.get
+			
+			//On change l'indice pour le prochain joueur.
+			
+			joueurEnCours = (joueurEnCours + (1 * sensNormal)) % nombreDeJoueur;
+			
+			//C'est bon!!
 		}
 	}
 	
