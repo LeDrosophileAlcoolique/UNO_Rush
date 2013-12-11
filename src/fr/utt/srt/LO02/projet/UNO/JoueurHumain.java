@@ -36,7 +36,7 @@ public class JoueurHumain extends Joueur
 				System.out.println("- 1 ) Quelle carte souhaitez vous jouer ?\n");
 				afficherCartes();
 				Scanner sc2 = new Scanner(System.in);
-				//jouerCarte(int sc2);
+				jouerCarte(sc2.next());
 			case(2):
 				poigne.add((Card)(partie.getPioche().getToutesLesCartes().poll()));
 				

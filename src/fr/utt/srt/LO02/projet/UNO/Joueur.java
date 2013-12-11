@@ -88,9 +88,5 @@ public abstract class Joueur
 		reponse = sc.nextInt();
 		
 		
-		
-
-		
-		
 	}
 }
