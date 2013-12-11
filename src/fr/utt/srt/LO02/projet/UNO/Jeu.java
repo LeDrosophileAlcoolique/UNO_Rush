@@ -136,6 +136,8 @@ public class Jeu
 	{
 		boolean partieFinie = false;
 		int joueurEnCours = 0;
+		System.out.println("test");
+		
 		
 		//On initialise la Defausse
 		talon.getCartes().add(pioche.getToutesLesCartes().poll());

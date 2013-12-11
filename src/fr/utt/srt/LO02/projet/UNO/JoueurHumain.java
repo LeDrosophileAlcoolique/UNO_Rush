@@ -19,7 +19,9 @@ public class JoueurHumain extends Joueur
 	{
 		if(estJouable(poigne.get(index)));
 		{
-			partie.setPioche(pioche);
+			//partie.setPioche(pioche);
+			
+			return false;
 		}
 	}
 	
@@ -44,10 +46,10 @@ public class JoueurHumain extends Joueur
 				System.out.println("- 1 ) Quelle carte souhaitez vous jouer ?\n");
 				afficherCartes();
 				Scanner sc2 = new Scanner(System.in);
-				while(!poserCarte(sc2.next()))
-				{
-				}
-				
+//				while(!poserCarte(sc2.next()))
+//				{
+//				}
+//				
 				
 			case(2):
 				poigne.add((Card)(partie.getPioche().getToutesLesCartes().poll()));

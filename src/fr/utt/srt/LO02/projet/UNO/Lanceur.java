@@ -29,6 +29,7 @@ public class Lanceur {
 		
 		
 		partieDeUNO = new Jeu(nombreJoueur, nombreHumain);
+		partieDeUNO.lancerManche();
 	}
 
 }
