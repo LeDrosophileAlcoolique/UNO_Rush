@@ -36,17 +36,9 @@ public class Jeu
 		// DEBUG TEST
 		ListIterator li = listeJoueur.listIterator();
 
-		while (li.hasNext()) 
-		{
+		while (li.hasNext())
 			((Joueur) (li.next())).affichageTexte();
-		}
 
-	}
-	
-	public static char scan(int index) { // récupère char dans un message a la position index depuis clavier 
-		Scanner scan = new Scanner(System.in);
-		//System.out.print(c = scan.nextLine().charAt(index)); // à dégager plus tard
-		return scan.nextLine().charAt(index);
 	}
 	
 	private void distribuerCartes()
