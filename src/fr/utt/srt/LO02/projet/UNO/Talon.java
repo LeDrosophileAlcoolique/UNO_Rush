@@ -6,15 +6,18 @@ import java.util.ListIterator;
 public class Talon 
 {
 	
-	private List cartes;
+	private List<Card> cartes;
 	
 	public Talon()
 	{
-		cartes = new LinkedList();
+		cartes = new LinkedList<Card>();
 	}
-	
-	public void creerJeu()
-	{
-		
+
+	public List<Card> getCartes() {
+		return cartes;
+	}
+
+	public void setCartes(List<Card> cartes) {
+		this.cartes = cartes;
 	}
 }

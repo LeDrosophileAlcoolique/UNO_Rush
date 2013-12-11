@@ -158,9 +158,6 @@ public class Jeu
 				partieFinie = true;
 			}
 			
-			//On vérifie que la pioche a encore des carte.
-			
-			
 			//On applique l'effet de la carte posée.
 			
 			////talon.get
