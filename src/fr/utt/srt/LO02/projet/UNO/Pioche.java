@@ -8,11 +8,11 @@ import java.util.Collections;
 
 public class Pioche 
 {
-	public LinkedList getToutesLesCartes() {
+	public LinkedList<Card> getToutesLesCartes() {
 		return toutesLesCartes;
 	}
 
-	public void setToutesLesCartes(LinkedList toutesLesCartes) {
+	public void setToutesLesCartes(LinkedList<Card> toutesLesCartes) {
 		this.toutesLesCartes = toutesLesCartes;
 	}
 
@@ -22,7 +22,7 @@ public class Pioche
 	
 	public Pioche()
 	{
-		toutesLesCartes = new LinkedList();
+		toutesLesCartes = new LinkedList<Card>();
 		//on creer le jeu de carte
 		creerJeu();
 		//on mélange les cartes

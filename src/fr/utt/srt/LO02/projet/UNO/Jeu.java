@@ -146,6 +146,7 @@ public class Jeu
 		int joueurEnCours = 0;
 		
 		//On initialise la Defausse
+		talon.getCartes().add(pioche.getToutesLesCartes().poll());
 		
 		while(!partieFinie)
 		{

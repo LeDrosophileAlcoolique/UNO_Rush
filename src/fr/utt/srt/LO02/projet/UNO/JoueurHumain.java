@@ -15,6 +15,14 @@ public class JoueurHumain extends Joueur
 		affichageTexte();
 	}
 	
+	public boolean poserCarte(int index)
+	{
+		if(estJouable(poigne.get(index)));
+		{
+			partie.setPioche(pioche);
+		}
+	}
+	
 	
 	public void jouer()
 	{
@@ -36,7 +44,11 @@ public class JoueurHumain extends Joueur
 				System.out.println("- 1 ) Quelle carte souhaitez vous jouer ?\n");
 				afficherCartes();
 				Scanner sc2 = new Scanner(System.in);
-				jouerCarte(sc2.next());
+				while(!poserCarte(sc2.next()))
+				{
+				}
+				
+				
 			case(2):
 				poigne.add((Card)(partie.getPioche().getToutesLesCartes().poll()));
 				
